@@ -1,35 +1,35 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Meal from "./pages/Meal";
-import Category from "./pages/Category";
-import MyMeal from "./pages/MyMeal";
-import Search from "./pages/Search";
+import Categories from "./components/Categories";
+import CategoryPage from "./components/CategoryPage";
+import RecipePage from "./components/RecipePage";
 import Default from "./pages/Default";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar";
 
-const App = () => {
-  return (
-    <Router>
-      <main>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/meal/:id" component={Meal}></Route>
-          <Route path="/category" exact component={Category}></Route>
-          <Route path="/search" component={Search}></Route>
-          <Route path="/mymeal" component={MyMeal}></Route>
-          <Route path="/aboutus" component={AboutUs}></Route>
-          <Route path="/contact" component={ContactUs}></Route>
-          <Route component={Default} />
-        </Switch>
-      </main>
-    </Router>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/categories" component={Categories}></Route>
+            <Route exact path="/:category" component={CategoryPage}></Route>
+            <Route
+              exact
+              path="/:category/:recipe"
+              component={RecipePage}
+            ></Route>
+            <Route component={Default} />
+          </Switch>
+        </Router>
+      </>
+    );
+  }
+}
 
 export default App;

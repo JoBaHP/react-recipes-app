@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
-
-class Home extends Component {
+export default class Home extends Component {
   render() {
     return (
-      <Header title="Meal Aplication">
-        <Link to="search" className="text-uppercase btn btn-info btn-lg mt-5">
-          search for meals
+      <Header title="amazing recipes">
+        <Link
+          to="categories"
+          className="text-uppercase btn btn-info btn-lg mt-3"
+        >
+          search recipes
         </Link>
       </Header>
     );
   }
 }
-
-export default Home;
