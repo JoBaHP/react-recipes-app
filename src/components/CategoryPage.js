@@ -23,9 +23,9 @@ const CategoryPage = () => {
   return (
     <>
       <main>
-        <section className="meal-category-section">
+        <section>
           <h2>{path}</h2>
-          <section className="category-section">
+          <section>
             {categoryData.map((item, i) => {
               return (
                 <section className="category" key={i}>
