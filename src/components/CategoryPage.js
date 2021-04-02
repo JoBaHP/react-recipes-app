@@ -25,18 +25,22 @@ const CategoryPage = () => {
       <main>
         <section>
           <h2>{path}</h2>
-          <section>
+          <div className="card-columns">
             {categoryData.map((item, i) => {
               return (
-                <section className="category" key={i}>
+                <div class="card" style={{ width: "18rem" }} key={i}>
                   <Link to={`/${path}/${item.strMeal}`}>
-                    <p>{item.strMeal}</p>
-                    <img src={item.strMealThumb} alt={item.strMeal} />
+                    <img
+                      className="card-img-top"
+                      src={item.strMealThumb}
+                      alt={item.strMeal}
+                    />
+                    <p className="card-text">{item.strMeal}</p>
                   </Link>
-                </section>
+                </div>
               );
             })}
-          </section>
+          </div>
         </section>
       </main>
     </>

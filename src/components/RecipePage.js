@@ -19,89 +19,89 @@ const RecipePage = () => {
   }, []);
   return (
     <main>
-      <section className="meal-category-section">
-        <section className="recipe-section">
+      <section>
+        <div className="card" style={{ width: "50%" }}>
           {recipeData.map((item, i) => {
             return (
-              <section className="recipe" key={i}>
-                <section className="recipe-header">
-                  <h2>{item.strMeal}</h2>
-                  <img src={item.strMealThumb} alt={item.strMeal} />
-                </section>
-                <section className="how-to-make">
-                  <h3>Ingredients</h3>
-                  <ul className="ingredients">
-                    <li>
+              <div className="card-body" key={i}>
+                <h2 className="card-title">{item.strMeal}</h2>
+                <div>
+                  <img
+                    className="card-img-top"
+                    style={{ width: "50%" }}
+                    src={item.strMealThumb}
+                    alt={item.strMeal}
+                  />
+                </div>
+                <div>
+                  <h3 className="card-title">Ingredients</h3>
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
                       {item.strMeasure1} {item.strIngredient1}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure2} {item.strIngredient2}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure3} {item.strIngredient3}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure4} {item.strIngredient4}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure5} {item.strIngredient5}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure5} {item.strIngredient5}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure6} {item.strIngredient6}
                     </li>
-                    <li>
-                      {item.strMeasure7} {item.strIngredient7}
+                    <li className="list-group-item">
+                      {item.strMeasure7} {item.strIngredient7}{" "}
+                      className="list-group-item"
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure8} {item.strIngredient8}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure9} {item.strIngredient9}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure10} {item.strIngredient10}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure11} {item.strIngredient11}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure12} {item.strIngredient12}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure13} {item.strIngredient13}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure14} {item.strIngredient14}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure15} {item.strIngredient15}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure16} {item.strIngredient16}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure17} {item.strIngredient17}
                     </li>
-                    <li>
+                    <li className="list-group-item">
                       {item.strMeasure18} {item.strIngredient18}
-                    </li>
-                    <li>
-                      {item.strMeasure19} {item.strIngredient19}
-                    </li>
-                    <li>
-                      {item.strMeasure20} {item.strIngredient20}
                     </li>
                   </ul>
                   <h3>Instructions</h3>
-                  <p className="instructions">{item.strInstructions}</p>
-                </section>
-              </section>
+                  <p className="card-text">{item.strInstructions}</p>
+                </div>
+              </div>
             );
           })}
-        </section>
+        </div>
       </section>
     </main>
   );
