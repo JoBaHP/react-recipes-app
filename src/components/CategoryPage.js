@@ -18,7 +18,7 @@ const CategoryPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   return (
     <>

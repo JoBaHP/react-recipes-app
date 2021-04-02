@@ -16,7 +16,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
   return (
     <main>
       <section>
