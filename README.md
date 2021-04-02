@@ -1,3 +1,3 @@
 # react-recipes-app
 
-https://react-recipes-app-test.herokuapp.com/
+https://react-reacipes-application.netlify.app/
