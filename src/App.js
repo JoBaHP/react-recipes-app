@@ -26,8 +26,7 @@ class App extends Component {
             <Route
               exact
               path="/:category/:recipe"
-              component={RecipePage}
-            ></Route>
+              component={RecipePage}></Route>
 
             <Route component={Default} />
           </Switch>
