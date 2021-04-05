@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
-  const fetchData = async () => {
-    const resp = await axios.get(
-      "https://www.themealdb.com/api/json/v1/1/categories.php"
-    );
-    console.log(resp.data.categories);
-    setCategories(resp.data.categories);
-  };
-  console.log(categories);
 
   useEffect(() => {
-    fetchData();
+    axios
+      .get("https://www.themealdb.com/api/json/v1/1/categories.php")
+      .then((resp) => {
+        console.log(resp.data.categories);
+        setCategories(resp.data.categories);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <>

@@ -3,20 +3,21 @@ import axios from "axios";
 
 const RecipePage = () => {
   const [recipeData, setRecipeData] = useState([]);
-  const path = window.location.pathname.split("/");
-  const newPath = path.slice(2);
-
-  const fetchData = async () => {
-    const resp = await axios.get(
-      ` https://www.themealdb.com/api/json/v1/1/search.php?s=${newPath}`
-    );
-    console.log(resp.data.meals);
-    setRecipeData(resp.data.meals);
-  };
 
   useEffect(() => {
-    fetchData();
-  });
+    const path = window.location.pathname.split("/");
+    const newPath = path.slice(2);
+    axios
+      .get(` https://www.themealdb.com/api/json/v1/1/search.php?s=${newPath}`)
+      .then((resp) => {
+        console.log(resp.data.meals);
+        setRecipeData(resp.data.meals);
+      });
+
+    return () => {
+      setRecipeData([]);
+    };
+  }, []);
   return (
     <main>
       <section>

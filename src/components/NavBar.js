@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 class NavBar extends Component {
   render() {
@@ -26,22 +27,7 @@ class NavBar extends Component {
               </Link>
             </li>
           </ul>
-          <form class="form-inline">
-            <input
-              class="form-control mr-sm-2 rounded-pill border-end-0 border"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <span class="input-group-append">
-              <button
-                class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3"
-                type="button"
-              >
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-          </form>
+          <SearchBox handleChange={(e) => console.log(e.target.value)} />
         </div>
       </nav>
     );
