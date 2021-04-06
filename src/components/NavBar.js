@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import AuthNav from "../auth/AuthNav";
 
 class NavBar extends Component {
   render() {
@@ -28,6 +29,7 @@ class NavBar extends Component {
             </li>
           </ul>
           <SearchBox handleChange={(e) => console.log(e.target.value)} />
+          <AuthNav />
         </div>
       </nav>
     );
