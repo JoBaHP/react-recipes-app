@@ -10,14 +10,14 @@ const SearchBox = ({ placeholder, handleChange }) => {
         aria-label="Search"
         onChange={handleChange}
       />
-      <span className="input-group-append">
+      {/*       <span className="input-group-append">
         <button
           className="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3"
           type="button"
         >
           <i className="fa fa-search"></i>
         </button>
-      </span>
+      </span> */}
     </form>
   );
 };
